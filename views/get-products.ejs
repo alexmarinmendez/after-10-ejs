@@ -1,0 +1,25 @@
+<%- include('./partials/head')  %> 
+<% if (products.length>0) { %>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Product name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Thumbnail</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+    <% products.forEach(item => { %>
+        <tr>
+            <td><%=item.title  %> </td>
+            <td>$ <%=item.price  %> </td>
+            <td><img src="<%=item.thumbnail %>" width="50"></td>
+        </tr>
+    <% }) %>
+        </tbody>
+        </table>
+<% } else { %>
+    <p>There is no data to show</p>
+<% } %>
+<a href="/" class="btn btn-success">Create a product</a>
+<%- include('./partials/foot')  %> 
